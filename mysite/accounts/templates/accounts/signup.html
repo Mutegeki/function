@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>signup</title>
-</head>
-<body>
+{% extends "base_layout.html" %}
+
+{% block content %}
 	<h1>Signup </h1>
-	<form class="site-form" action="index.html" method="post">
+	<form class="site-form" action="{% url 'accounts:signup' %}" method="POST">
+		{% csrf_token %}
 		{{ form }}
 		<input type="submit" name="Signup">
 	</form>
-
-</body>
-</html>
+{% endblock %}
